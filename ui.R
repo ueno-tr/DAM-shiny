@@ -1,7 +1,14 @@
+# ui.R
 library(shiny)
-shinyUI(
-  fluidPage(
-  sliderInput(inputId = "num", label = "Choose a number", value = 25, min = 1, max = 100),
-  plotOutput("hist")
+shinyUI(pageWithSidebar(
+  headerPanel(title="Input File Test"),
+  sidebarPanel(
+    fileInput("file", label="Input File:")
+  ),
+  mainPanel(
+    h4("File Information:"),
+    verbatimTextOutput("info"),
+    h4("Contents"),
+    verbatimTextOutput("file")
   )
-  )
+))
