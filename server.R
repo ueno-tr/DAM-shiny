@@ -1,7 +1,6 @@
 library(shiny)
-shinyServer(
 
-  ##複数モニターのデータを三次元配列（array）にするか
+##複数モニターのデータを三次元配列（array）にするか
 ##4320行、32列、モニター数の三次元配列
 ##3次元目を指定する名前をファイル名であるモニター番号（M10 etc）とするか
 ##DAM file scanで3日分など切り出し後に使用
@@ -202,6 +201,10 @@ barplotall <- function(x) {
     }
     return(out)
   }
+
+shinyServer(
+
+
 
 
 
